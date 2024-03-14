@@ -1,0 +1,32 @@
+{
+  "name": "cypress-porject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "teste2echrome": "npx cypress run --spec cypress\\integration\\examples\\e2enew.js --headed --browser chrome --record --key 3d14a59d-13ee-425a-8f7e-27c672430148",
+    "teste2efirefox": "npx cypress run --spec cypress\\integration\\examples\\e2enew.js --headed --browser firefox --record --key 3d14a59d-13ee-425a-8f7e-27c672430148",
+    "teste2echromerecord": "npx cypress run --spec cypress\\integration\\examples\\e2enew.js --headed --browser chrome --record --key 3d14a59d-13ee-425a-8f7e-27c672430148 --record"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.0.1",
+    "@cypress/browserify-preprocessor": "^3.0.2",
+    "@cypress/webpack-preprocessor": "^6.0.1",
+    "cypress": "^13.6.4",
+    "cypress-iframe": "^1.0.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "stepdefinitions": "cypress/integration/examples/BDD",
+    "json": {
+      "enabled": true,
+      "output": "cypress/cucumberReports/results.json"
+
+    }
+  },
+  "devDependencies": {
+    "multiple-cucumber-html-reporter": "^3.6.1"
+  }
+}
